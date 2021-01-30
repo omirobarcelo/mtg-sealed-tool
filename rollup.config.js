@@ -7,6 +7,7 @@ import sveltePreprocess from "svelte-preprocess";
 import typescript from "@rollup/plugin-typescript";
 // import css from "rollup-plugin-css-only";
 import smelte from "smelte/rollup-plugin-smelte";
+import nodePolyfills from 'rollup-plugin-node-polyfills';
 
 const production = !process.env.ROLLUP_WATCH;
 
@@ -83,6 +84,7 @@ export default {
     // a separate file - better for performance
     // css({ output: "bundle.css" }),
 
+    nodePolyfills(),
     // If you have external dependencies installed from
     // npm, you'll most likely need these plugins. In
     // some cases you'll need additional configuration -

@@ -2,7 +2,13 @@
   import "smelte/src/tailwind.css";
   import Button from "smelte/src/components/Button";
 
+  import { allSets } from 'scryfall';
+
   export let name: string;
+
+  function handler() {
+    allSets().then(res => console.log(res));
+  }
 </script>
 
 <style>
@@ -35,6 +41,6 @@
   </p>
 
   <div class="py-2">
-    <Button light>Button</Button>
+    <Button light on:click={handler}>Button</Button>
   </div>
 </main>
